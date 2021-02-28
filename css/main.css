@@ -8,3 +8,12 @@ hr {
 	height: 1px; 
 	border: 0; 
 }
+
+.reflinks {
+	/* color: rgb(24, 21, 21); */
+	color: pink;
+}
+
+a:link {
+	color: pink;
+}
