@@ -53,13 +53,23 @@ It will most likely not go over too much about performance.
 - Login
 - View threads (index)
 - View thread
+```plantuml
+@startuml
+    skinparam backgroundColor #EEEBDC
+    actor User
+    User -> index.cgi: click on thread name
+    index.cgi -> view_thread.cgi: pass thread id as param
+    view_thread.cgi -> User: return html with thread info
+@enduml
+
+```
 - Create thread
 ```plantuml
 @startuml
     skinparam backgroundColor #EEEBDC
     actor User
-    User -> 5chan_threads: click on 'create thread' button
-    5chan_threads -> new_thread.cgi: calls to display create thread page
+    User -> index.cgi: click on 'create thread' button
+    index.cgi -> new_thread.cgi: calls to display create thread page
     new_thread.cgi -> User: displays form to create thread
     User -> new_thread.cgi: enters new thread info, clicks submit
     new_thread.cgi --> create_thread.js: js listening for submit, collects form info
