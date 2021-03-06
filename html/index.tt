@@ -41,12 +41,16 @@
                <tbody>
 		[% FOREACH key IN post_arr_ref.keys.sort %]
 			[% post_arr = post_arr_ref.$key %]
-			<tr>
-			  <td>[% post_arr.id %]</td>
-			  <td>[% post_arr.title %]</td>
-			  <td>[% post_arr.created_datetime %]</td>
-			  <td>[% post_arr.username %]</td>
-			</tr>
+      <tr>
+        <td width="2%" align="right"><b>[% post_arr.id %]1.</b></td>
+        <td><b>[% post_arr.title %]</b></td>
+      </tr>
+      <tr>
+        <!-- <td></td> -->
+        <td colspan="1"></td>
+        <td><em>Posted by [% post_arr.username %] - [% post_arr.created_datetime %]</em></td>
+       </tr>
+       <tr style="height:5px"></tr>
 		[% END %]
                  <tr>
                    <td width="2%" align="right"><b>1.</b></td>
