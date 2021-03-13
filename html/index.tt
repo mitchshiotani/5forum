@@ -43,7 +43,10 @@
 			[% post_arr = post_arr_ref.$key %]
       <tr>
         <td width="2%" align="right"><b>[% post_arr.id %].</b></td>
-        <td><b>[% post_arr.title %]</b></td>
+        <td><b>
+		<a href="[% base_url %]/threads/view_thread.cgi?thread_id=[% post_arr.id %]">
+		[% post_arr.title %]</b></td>
+		</a>
       </tr>
       <tr>
         <!-- <td></td> -->

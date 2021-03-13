@@ -1,3 +1,4 @@
+
 <html>
         <head>
                 <!-- Latest compiled and minified CSS -->
@@ -38,25 +39,18 @@
            <div class="col">
              <table width="90%">
                <tbody>
-                 <tr>
-                   <td width="2%" align="right"><b>1.</b></td>
-                   <td><b>Hello</b></td>
-                 </tr>
-                 <tr>
-                   <!-- <td></td> -->
-                   <td colspan="1"></td>
-                   <td><em>Posted by mushman_jones 6 hours ago</em></td>
-                  </tr>
-                  <tr style="height:5px"></tr>
-                  <tr>
-                    <td width="2%" align="right"><b>99.</b></td>
-                    <td><b>Cheese Talk MegaThread</b></td>
-                   </tr>
-                  <tr>
-                    <!-- <td></td> -->
-                    <td colspan="1"></td>
-                   <td><em>Posted by mushman_jones 6 hours ago</em></td>
-                 </tr>
+			[% post_hash = post_hash_ref.$thread_id %]
+      <tr>
+        <td width="2%" align="right"><b>[% post_hash.id %].</b></td>
+        <td><b>[% post_hash.title %]</b></td>
+        <td><b>[% post_hash.content %]</b></td>
+      </tr>
+      <tr>
+        <!-- <td></td> -->
+        <td colspan="1"></td>
+        <td><em>Posted by [% post_hash.username %] ([% post_hash.created_datetime %])</em></td>
+       </tr>
+       <tr style="height:5px"></tr>
                </tbody>
              </table>
            </div>
