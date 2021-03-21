@@ -61,8 +61,8 @@ It will most likely not go over too much about performance.
     index.cgi -> view_thread.cgi: pass thread id as param
     view_thread.cgi -> User: return html with thread info
 @enduml
-
 ```
+- View thread w/ comments
 - Create thread
 ```plantuml
 @startuml
@@ -71,7 +71,7 @@ It will most likely not go over too much about performance.
     User -> index.cgi: click on 'create thread' button
     index.cgi -> new_thread.cgi: calls to display create thread page
     new_thread.cgi -> User: displays form to create thread
-    User -> new_thread.cgi: enters new thread info, clicks submit
+    User -> new_thread.cgi: enters new thread info into form, clicks submit
     new_thread.cgi --> create_thread.js: js listening for submit, collects form info
     create_thread.js -> create_thread.cgi: pass form info
     database 5chan
@@ -80,6 +80,17 @@ It will most likely not go over too much about performance.
 @enduml
 ```
 - Comment on thread
+```plantuml
+  skinparam backgroundColor #EEEBDC
+    actor User
+    User -> view_thread.cgi: view a thread
+    User -> view_thread.cgi: add comment info into form, click submit
+    view_thread.cgi -> create_comment.js: js listening for submit, collects form info
+    create_comment.js -> create_comment.cgi: pass comment info
+    database 5chan.comment
+    create_comment.cgi -> 5chan.comment: save new comment info
+
+```
 
 ### 5. Logical View
 
